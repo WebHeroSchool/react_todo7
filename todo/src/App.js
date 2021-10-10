@@ -1,5 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
+import {count, length} from'./number';
+console.log(count * length);
+
 
 function App() {
   return (
