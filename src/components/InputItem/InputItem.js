@@ -1,3 +1,12 @@
 import React from 'react';
-const InputItem = () => (<p>Одно из важнейших дел</p>);
+import TextField from '@material-ui/core/TextField';
+
+const InputItem = () => (<div>
+     <TextField
+       id="standard-basic"
+       label="ДОБАВИТЬ ЗАДАНИЕ"
+       variant="standard"
+     />
+</div>)
+
 export default InputItem;
