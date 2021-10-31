@@ -7,8 +7,8 @@ import CardContent from '@material-ui/core/CardContent';
 import styles from './App.module.css';
 
 class App extends React.Component {
-  render() {
-    const items = [
+  state = {
+    items: [
       {
         value: 'Написать приложение React',
         isDone: true
@@ -29,20 +29,22 @@ class App extends React.Component {
         value: 'Купить корм коту',
         isDone: false
       }
-    ];
+    ]
+  };
 
+  render() {
     return (
       <div className={styles.wrap}>
       <Card>
           <CardContent>
             <h1 className={styles.title}>Важные дела:</h1>
             <InputItem />
-            <ItemList items={items} />
+            <ItemList items={this.state.items} />
             <Footer count={3} />
           </CardContent>
         </Card>
       </div>);
   }
-}
+};
 
 export default App;
