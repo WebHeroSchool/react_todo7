@@ -15,11 +15,11 @@ class App extends React.Component {
       },
       {
         value: 'Медитаця',
-        isDone: true
+        isDone: false
       },
       {
         value: 'Сходить в бассей',
-        isDone: false
+        isDone: true
       },
       {
         value: 'Приготовить ужин',
@@ -27,10 +27,12 @@ class App extends React.Component {
       },
       {
         value: 'Купить корм коту',
-        isDone: false
+        isDone: true
       }
     ]
   };
+
+  onClickDone = isDone => console.log(isDone)
 
   render() {
     return (
@@ -39,7 +41,7 @@ class App extends React.Component {
           <CardContent>
             <h1 className={styles.title}>Важные дела:</h1>
             <InputItem />
-            <ItemList items={this.state.items} />
+            <ItemList items={this.state.items} onClickDone={this.onClickDone} />
             <Footer count={3} />
           </CardContent>
         </Card>
