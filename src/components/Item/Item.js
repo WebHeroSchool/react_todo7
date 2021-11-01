@@ -1,4 +1,5 @@
 import React from 'react';
+import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Checkbox from '@material-ui/core/Checkbox';
@@ -12,7 +13,7 @@ const styles = {
   }
 };
 
-const Item = ({ value, isDone, classes, onClickDone, id }) => (
+const Item = ({ value, isDone, classes, onClickDone, id, onClickDelete }) => (
   <ListItem fullWidth>
     <Checkbox
       checked={isDone}
@@ -22,9 +23,15 @@ const Item = ({ value, isDone, classes, onClickDone, id }) => (
    <ListItemText primary={value} classes={
       { root:isDone && classes.done }
      } />
-     <IconButton aria-label="delete">
-         <DeleteIcon />
-       </IconButton>
-  </ListItem>);
+    <ListItemSecondaryAction>
+     <IconButton
+         aria-label="Comments"
+         onClick={() => onClickDelete(id)}
+         >
+        <DeleteIcon />
+      </IconButton>
+    </ListItemSecondaryAction>
+  </ListItem>
+);
 
 export default withStyles(styles)(Item);

@@ -21,7 +21,7 @@ class App extends React.Component {
       },
       {
         value: 'Сходить в бассей',
-        isDone: true,
+        isDone: false,
         id: 3
       },
       {
@@ -31,10 +31,11 @@ class App extends React.Component {
       },
       {
         value: 'Купить корм коту',
-        isDone: true,
+        isDone: false,
         id: 5
       }
-    ]
+    ],
+    count: 6
   };
 
   onClickDone = id => {
@@ -49,6 +50,8 @@ class App extends React.Component {
     this.setState({ items: newItemList })
   };
 
+  onClickDelete = id => this.setState(state => ({ items: state.items.filter(item => item.id != id)}));
+
   render() {
     return (
       <div className={styles.wrap}>
@@ -56,8 +59,12 @@ class App extends React.Component {
           <CardContent>
             <h1 className={styles.title}>Важные дела:</h1>
             <InputItem />
-            <ItemList items={this.state.items} onClickDone={this.onClickDone} />
-            <Footer count={3} />
+            <ItemList
+            items={this.state.items}
+            onClickDone={this.onClickDone}
+            onClickDelete={this.onClickDelete}
+             />
+            <Footer count={this.state.count} />
           </CardContent>
         </Card>
       </div>);
