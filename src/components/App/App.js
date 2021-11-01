@@ -6,18 +6,27 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import styles from './App.module.css';
 
-  const App = () => {
+class App extends React.Component {
+  render() {
     const items = [
       {
-        value: 'Написать новое приложение',
+        value: 'Написать приложение React',
         isDone: true
       },
       {
-        value: 'Прописать props',
+        value: 'Медитаця',
         isDone: true
       },
       {
-        value: 'Сделать все дела',
+        value: 'Сходить в бассей',
+        isDone: false
+      },
+      {
+        value: 'Приготовить ужин',
+        isDone: false
+      },
+      {
+        value: 'Купить корм коту',
         isDone: false
       }
     ];
@@ -29,9 +38,11 @@ import styles from './App.module.css';
             <h1 className={styles.title}>Важные дела:</h1>
             <InputItem />
             <ItemList items={items} />
-            <Footer count={6} />
+            <Footer count={3} />
           </CardContent>
         </Card>
       </div>);
-    }
+  }
+}
+
 export default App;
