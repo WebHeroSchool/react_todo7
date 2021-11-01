@@ -1,14 +1,29 @@
 import React from 'react';
-import classnames from 'classnames';
-import styles from './Item.module.css';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
+import Checkbox from '@material-ui/core/Checkbox';
+import IconButton from '@material-ui/core/IconButton';
+import DeleteIcon from '@material-ui/icons/Delete';
+import {withStyles} from '@material-ui/core/styles';
 
-const Item = ({ value, isDone }) => (<span className={
-    classnames({
-        [styles.item]: true,
-        [styles.done]: isDone,
-    })
-}>
-  {value}
-</span>);
+const styles = {
+  done: {
+    textDecoration: 'line-through'
+  }
+};
 
-export default Item;
+const Item = ({ value, isDone, classes }) => (
+  <ListItem fullWidth>
+    <Checkbox
+      checked={isDone}
+      tabIndex={-1}
+     />
+   <ListItemText primary={value} classes={
+      { root:isDone && classes.done }
+     } />
+     <IconButton aria-label="delete">
+         <DeleteIcon />
+       </IconButton>
+  </ListItem>);
+
+export default withStyles(styles)(Item);
