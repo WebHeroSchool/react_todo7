@@ -52,6 +52,8 @@ class App extends React.Component {
 
   onClickDelete = id => this.setState(state => ({ items: state.items.filter(item => item.id !== id)}));
 
+  onClickFooter = () => this.setState(state => ({ count: state.count -1 }));
+
   onClickAdd = value => this.setState(state => ({
     items: [
       ...state.items,
@@ -76,7 +78,7 @@ class App extends React.Component {
                 onClickDone={this.onClickDone}
                 onClickDelete={this.onClickDelete}
              />
-            <Footer count={this.state.count} />
+            <Footer count={this.state.count}  onClickFooter={this.onClickFooter} />
           </CardContent>
         </Card>
       </div>);
