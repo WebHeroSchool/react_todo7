@@ -15,7 +15,7 @@ const styles = {
 
 class Item extends React.Component {
   render() {
-    const {value, isDone, classes, onClickDone, id, onClickDelete, onClickFooter } = this.props;
+    const {value, isDone, classes, onClickDone, id, onClickDelete } = this.props;
 
     return (<ListItem>
         <Checkbox

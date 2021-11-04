@@ -8,26 +8,37 @@ import Button from '@material-ui/core/Button';
 
 class InputItem extends React.Component {
   state = {
-    inputValue: ''
+    inputValue: '',
+    inputError: false
   };
 
   onButtonClick = () => {
-    this.setState({
-      inputValue: ''
-    });
+    if (this.state.inputValue !== '') {
+      this.setState({
+        inputValue: ''
+      });
+      this.props.onClickAdd(this.state.inputValue);
+    }
+    else {
+      this.setState({
+        inputError: true
+      });
+    }
+  };
 
-    this.props.onClickAdd(this.state.inputValue);
-  }
-
-  render() {    
-    return (<Grid>
+  render() {
+      return (<Grid>
          <TextField
            id="standard-basic"
            label="ДОБАВИТЬ ЗАДАНИЕ"
            variant="standard"
            fullWidth
            value={this.state.inputValue}
-           onChange={event => this.setState({ inputValue: event.target.value })}
+           error={this.state.inputError}
+           onChange={event => this.setState({
+             inputValue: event.target.value.toUpperCase(),
+             inputError: false
+            })}
          />
          <Button
            variant='contained'
