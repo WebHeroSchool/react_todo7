@@ -36,6 +36,11 @@ class Item extends React.Component {
         </ListItemSecondaryAction>
       </ListItem>)
   }
-}
+};
+
+Item.defaultProps= {
+  value: 'не найдено',
+  id: 0
+};
 
 export default withStyles(styles)(Item);
