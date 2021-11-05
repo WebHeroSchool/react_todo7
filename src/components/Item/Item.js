@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
@@ -38,9 +39,11 @@ class Item extends React.Component {
   }
 };
 
-Item.defaultProps= {
-  value: 'не найдено',
-  id: 0
+Item.propTypes= {
+  value: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
+  onClickDone: PropTypes.func.isRequired,
+  onClickDelete: PropTypes.func.isRequired
 };
 
 export default withStyles(styles)(Item);

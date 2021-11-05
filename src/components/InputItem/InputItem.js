@@ -50,6 +50,6 @@ class InputItem extends React.Component {
          </Button>
     </Grid>);
   }
-}
+};
 
 export default InputItem;
