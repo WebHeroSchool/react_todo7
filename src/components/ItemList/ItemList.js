@@ -15,4 +15,12 @@ const ItemList = ({ items, onClickDone, onClickDelete }) => (<List>
   ))}
 </List>);
 
+ItemList.defaultProps = {
+  items: [
+    {
+      value: 'не найдено'
+    }
+  ]
+};
+
 export default ItemList;
