@@ -15,6 +15,16 @@ const styles = {
 };
 
 class Item extends React.Component {
+  componentDidMount() {
+    console.log('componentDidMount');
+  }
+  componentDidUpdate() {
+    console.log('componentDidUpdate');
+  }
+  componentWillUnmount() {
+    console.log('componentWillUnmount');
+  }
+
   render() {
     const {value, isDone, classes, onClickDone, id, onClickDelete } = this.props;
 
@@ -42,6 +52,7 @@ class Item extends React.Component {
 Item.propTypes= {
   value: PropTypes.string.isRequired,
   id: PropTypes.number.isRequired,
+  isDone: PropTypes.bool.isRequired,
   onClickDone: PropTypes.func.isRequired,
   onClickDelete: PropTypes.func.isRequired
 };

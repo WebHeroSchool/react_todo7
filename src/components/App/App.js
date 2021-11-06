@@ -9,33 +9,33 @@ import styles from './App.module.css';
 class App extends React.Component {
   state = {
     items: [
-      {
-        value: 'Написать приложение React',
-        isDone: true,
-        id: 1
-      },
-      {
-        value: 'Медитаця',
-        isDone: false,
-        id: 2
-      },
-      {
-        value: 'Сходить в бассей',
-        isDone: false,
-        id: 3
-      },
-      {
-        value: 'Приготовить ужин',
-        isDone: false,
-        id: 4
-      },
+    //  {
+      //  value: 'Написать приложение React',
+      //  isDone: true,
+      //  id: 1
+    //  },
+    //  {
+      //  value: 'Медитаця',
+      //  isDone: false,
+      //  id: 2
+    //  },
+    //  {
+      //  value: 'Сходить в бассей',
+      //  isDone: false,
+      //  id: 3
+    //  },
+    //  {
+      //  value: 'Приготовить ужин',
+      //  isDone: false,
+      //  id: 4
+    //  },
       {
         value: 'Купить корм коту',
         isDone: false,
         id: 5
       }
     ],
-    count: 5
+    count: 1
   };
 
   onClickDone = id => {
