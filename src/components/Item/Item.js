@@ -16,13 +16,11 @@ const styles = {
 
 class Item extends React.Component {
   componentDidMount() {
-    console.log('componentDidMount');
+    this.timerId = setInterval(() => console.log('УТЕЧКА ПАМЯТИ'), 1000);
   }
-  componentDidUpdate() {
-    console.log('componentDidUpdate');
-  }
+
   componentWillUnmount() {
-    console.log('componentWillUnmount');
+    clearInterval(this.timerId);
   }
 
   render() {
