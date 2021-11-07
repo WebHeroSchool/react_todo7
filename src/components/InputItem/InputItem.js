@@ -7,6 +7,8 @@ import Button from '@material-ui/core/Button';
 
 
 class InputItem extends React.Component {
+  
+
   state = {
     inputValue: '',
     inputError: false
@@ -50,6 +52,6 @@ class InputItem extends React.Component {
          </Button>
     </Grid>);
   }
-}
+};
 
 export default InputItem;
