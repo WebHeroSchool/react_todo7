@@ -15,13 +15,13 @@ const styles = {
 };
 
 class Item extends React.Component {
-  componentDidMount() {
-    this.timerId = setInterval(() => console.log('УТЕЧКА ПАМЯТИ'), 1000);
-  }
+//  componentDidMount() {
+//    this.timerId = setInterval(() => console.log('УТЕЧКА ПАМЯТИ'), 1000);
+//  }
 
-  componentWillUnmount() {
-    clearInterval(this.timerId);
-  }
+//  componentWillUnmount() {
+//    clearInterval(this.timerId);
+//  }
 
   render() {
     const {value, isDone, classes, onClickDone, id, onClickDelete } = this.props;
