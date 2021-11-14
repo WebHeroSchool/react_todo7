@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 import Card from '@material-ui/core/Card';
 import MenuList from '@material-ui/core/MenuList';
@@ -22,7 +22,7 @@ const App = () =>
               </MenuList>
             </Card>
             <Card className={styles.content}>
-                
+
                       <Route path='/' exact component={About} />
                       <Route path='/todo' component={Todo} />
                       <Route path='/contacts' component={Contacts} />
