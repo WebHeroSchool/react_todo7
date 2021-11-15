@@ -1,9 +1,24 @@
-.wrap {
-  margin: auto;
-  font-family: sans-serif;
-  width: 400px;
+body {
+  padding-top: 36px;
+  background: #eee;
+  font-family: fantasy;
 }
 
-.title {
-  font-family: fantasy;
+.link {
+  text-decoration: none;
+}
+
+.sidebar {
+  grid-area: sidebar;
+}
+
+.content {
+  grid-area: content;
+}
+
+.wraps {
+  display: grid;
+  grid-template-areas: 'sidebar...content content';
+  margin: auto;
+  width: 500px;
 }
